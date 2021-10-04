@@ -9,7 +9,7 @@ For authentication, we still need:
 
 ## Using the App
 ### Set up environment
-Use this guide to set up your React Native environment. Follow the instructions until the "Creating a new application" section: \
+Use this guide to set up your React Native environment. Follow the React Native CLI Quickstart instructions until the "Creating a new application" section: \
 https://reactnative.dev/docs/environment-setup
 
 ### Clone this repository
