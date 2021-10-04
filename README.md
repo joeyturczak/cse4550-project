@@ -28,16 +28,15 @@ pod install
 ```
 
 ### Run the app
-Assuming you have everything set up properly, you can now run the app on a device or emulator.
+Assuming you have everything set up properly, you can now run the app on a device or emulator. If you're using an emulator, start it now.
+If you want to run the app on a physical device, this guide will help: \
+https://reactnative.dev/docs/running-on-device
 #### iOS
 In the main project folder, run the following command:
 ```
 npx react-native run-ios
 ```
 #### Android
-Make sure you have an virtual device running or a physical device connected. This guide will help you if you want to run the app on a physical device:
-https://reactnative.dev/docs/running-on-device
-
 When cloning this to macOS, you might run into an issue with permissions for the gradle wrapper file. Running this command fixes it:
 ```
 chmod 755 android/gradlew
@@ -47,6 +46,5 @@ Run the following command in the main project folder:
 npx react-native run-android
 ```
 
-For Android, you'll need to have an emulator or device running. This guide will help you if you want to run the app on a physical device:
-https://reactnative.dev/docs/running-on-device
+
 
