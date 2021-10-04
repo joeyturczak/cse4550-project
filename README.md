@@ -14,7 +14,7 @@ https://reactnative.dev/docs/environment-setup
 
 ### Clone this repository
 ```
-git clone https://github.com/joeyturczak/udrop.git
+git clone git@github.com:joeyturczak/udrop.git
 ```
 
 ### Install dependencies
