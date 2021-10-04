@@ -18,7 +18,7 @@ git clone git@github.com:joeyturczak/udrop.git
 ```
 
 ### Install dependencies
-In the project folder run the following command to install the packages from package.json.
+In the project folder, run the following command to install the packages from package.json.
 ```
 npm install
 ```
