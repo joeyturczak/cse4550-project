@@ -1,6 +1,5 @@
 // https://github.com/mongodb-university/realm-tutorial-react-native/blob/final/providers/AuthProvider.js
 import React, { useContext, useState, useEffect, useRef } from "react";
-import { Alert } from "react-native";
 import Realm from "realm";
 import { RealmApp } from "../RealmApp";
 
@@ -17,17 +16,11 @@ const AuthContext = React.createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(app.currentUser);
   const realmRef = useRef(null);
-  // const [projectData, setProjectData] = useState([]);
 
   useEffect(() => {
     if (!user) {
       return;
     }
-
-    // The current user always has their own project, so we don't need
-    // to wait for the user object to load before displaying that project.
-    // const myProject = { name: "My Project", partition: `project=${user.id}` };
-    // setProjectData([myProject]);
 
     const config = {
       sync: {
@@ -36,22 +29,9 @@ const AuthProvider = ({ children }) => {
       },
     };
 
-    // Open a realm with the logged in user's partition value in order
-    // to get the projects that the logged in user is a member of
+    // Open a realm with the logged in user's partition value
     Realm.open(config).then((userRealm) => {
       realmRef.current = userRealm;
-      const users = userRealm.objects("User");
-
-      // users.addListener(() => {
-      //   // The user custom data object may not have been loaded on
-      //   // the server side yet when a user is first registered.
-      //   if (users.length === 0) {
-      //     setProjectData([myProject]);
-      //   } else {
-      //     const { memberOf } = users[0];
-      //     setProjectData([...memberOf]);
-      //   }
-      // });
     });
 
     return () => {
@@ -60,7 +40,6 @@ const AuthProvider = ({ children }) => {
       if (userRealm) {
         userRealm.close();
         realmRef.current = null;
-        // setProjectData([]); // set project data to an empty array (this prevents the array from staying in state on logout)
       }
     };
   }, [user]);
@@ -69,26 +48,14 @@ const AuthProvider = ({ children }) => {
   // emailPassword authentication provider to log in.
   const signIn = async (email, password) => {
     const creds = Realm.Credentials.emailPassword(email, password);
-    // try {
       const newUser = await app.logIn(creds);
       setUser(newUser);
-    // } catch (err) {
-    //   console.error("Failed to log in", err.message);
-    //   Alert.alert("Something went wrong", "Failed to sign in");
-    // }
-    
   };
 
   // The signUp function takes an email and password and uses the
   // emailPassword authentication provider to register the user.
   const signUp = async (email, password) => {
-    // try {
       await app.emailPasswordAuth.registerUser(email, password);
-    // } catch (err) {
-    //   console.error("Failed to sign up", err.message);
-    //   Alert.alert("Something went wrong", "Failed to sign up");
-    // }
-    
   };
 
   // The signOut function calls the logOut function on the currently
@@ -102,20 +69,6 @@ const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  // const signOut = async () => {
-  //   if (user == null) {
-  //     console.warn("Not logged in, can't log out!");
-  //     return;
-  //   }
-  //   try {
-  //     await user.logOut();
-  //     setUser(null);
-  //   } catch (err) {
-  //     console.error(err.message);
-  //   }
-    
-  // };
-
   return (
     <AuthContext.Provider
       value={{
@@ -123,7 +76,6 @@ const AuthProvider = ({ children }) => {
         signIn,
         signOut,
         user,
-        // projectData, // list of projects the user is a memberOf
       }}
     >
       {children}

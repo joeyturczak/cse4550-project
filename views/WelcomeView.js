@@ -40,27 +40,6 @@ export function WelcomeView({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* <Text>Signup or Signin:</Text>
-      <View style={styles.inputContainer}>
-        <TextInput
-          onChangeText={setEmail}
-          value={email}
-          placeholder="email"
-          style={styles.inputStyle}
-          autoCapitalize="none"
-        />
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput
-          onChangeText={(text) => setPassword(text)}
-          value={password}
-          placeholder="password"
-          style={styles.inputStyle}
-          secureTextEntry
-        />
-      </View>
-      <Button onPress={onPressSignIn} title="Sign In" />
-      <Button onPress={onPressSignUp} title="Sign Up" /> */}
       <Text style={styles.logo}>Sign In</Text>
         <TextInput
             value={email}
