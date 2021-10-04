@@ -9,7 +9,7 @@ For authentication, we still need:
 
 ## Using the App
 ### Set up environment
-Use this guide to set up your React Native environment: \
+Use this guide to set up your React Native environment. Follow the instructions until the "Creating a new application" section: \
 https://reactnative.dev/docs/environment-setup
 
 ### Clone this repository
@@ -22,14 +22,27 @@ In the project folder, run the following command to install the packages from pa
 ```
 npm install
 ```
+If you're going to run the app on iOS, navigate to the ios folder and run this command:
+```
+pod install
+```
 
 ### Run the app
-In the project folder, run the following command to run it on iOS:
+Assuming you have everything set up properly, you can now run the app on a device or emulator.
+#### iOS
+In the main project folder, run the following command:
 ```
 npx react-native run-ios
 ```
+#### Android
+Make sure you have an virtual device running or a physical device connected. This guide will help you if you want to run the app on a physical device:
+https://reactnative.dev/docs/running-on-device
 
-Run the following command to run it on Android:
+When cloning this to macOS, you might run into an issue with permissions for the gradle wrapper file. Running this command fixes it:
+```
+chmod 755 android/gradlew
+```
+Run the following command in the main project folder:
 ```
 npx react-native run-android
 ```
