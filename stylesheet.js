@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   inputContainer: {
     padding: 5,
   },
   inputStyle: {
-    borderColor: "black",
+    borderColor: 'black',
     borderWidth: 1,
     padding: 10,
     borderRadius: 2,
@@ -17,21 +17,21 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   addTeamMemberInput: {
-    borderBottomColor: "black",
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
     marginTop: 5,
     fontSize: 18,
   },
   manageTeamButtonContainer: {
-    textAlign: "left",
-    borderTopColor: "grey",
+    textAlign: 'left',
+    borderTopColor: 'grey',
     borderTopWidth: 1,
-    borderBottomColor: "grey",
+    borderBottomColor: 'grey',
     borderBottomWidth: 1,
   },
   plusButton: {
     fontSize: 28,
-    fontWeight: "400",
+    fontWeight: '400',
   },
   container: {
     flex: 1,
@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-      marginBottom: 40,
-      color: 'black'
+    marginBottom: 40,
+    color: 'black',
   },
   input: {
     width: 200,
@@ -61,15 +61,15 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   buttontext: {
-    textAlign:'center',
-    fontWeight:'bold',
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
   fab: {
     position: 'absolute',
-    margin: 16,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'purple'
+    marginRight: 10,
+    backgroundColor: 'purple',
+    bottom: 70,
+    right: 5,
   },
 });
 
